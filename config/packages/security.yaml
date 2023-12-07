@@ -20,6 +20,7 @@ security:
             form_login: 
                 login_path: security.login
                 check_path: security.login
+                default_target_path: accueil
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
