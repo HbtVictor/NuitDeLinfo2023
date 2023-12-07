@@ -17,7 +17,7 @@
 {% block end_javascripts %}
 <script>
     let score=0;
-    let isPaused=false;
+    let isPaused=true;
 
     // get a random integer between the range of [min,max]
     function getRandomInt(min, max) {
@@ -154,6 +154,7 @@
         context.textBaseline = 'middle';
         context.fillText('GAME OVER!', canvas.width / 2, canvas.height / 2);
         context.fillText('Score: '+score, canvas.width / 2, canvas.height / 2+40);
+        
     }
 
     const canvas = document.getElementById('game');
@@ -308,61 +309,69 @@
         if(e.which === 40) {
             downOne();
         }
+
+        // Enter to start (start)
+        if(e.which === 32) {
+            isPaused = false;
+            restartGame();
+        }
     
         
-        // space key (fast drop)
-        if(e.which === 32) {
-            while(!downOne()){
+        // enter key (fast drop)
+        if(e.which === 13) {
+            if (isPaused === false){
+                while(!downOne()){
+                }
             }
         }
         //хак: след фигура меняем на 'I', 'J', 'L', 'O', 'S', 'T', 'Z'
-        if(e.which === 'I'.charCodeAt()) {
-            while(tetrominoNext.name!='I'){
-                tetrominoNext = getNextTetromino();
-            }
-            document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
-        }
-        if(e.which === 'J'.charCodeAt()) {
-            while(tetrominoNext.name!='J'){
-                tetrominoNext = getNextTetromino();
-            }
-            document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
-        }
-        if(e.which === 'L'.charCodeAt()) {
-            while(tetrominoNext.name!='L'){
-                tetrominoNext = getNextTetromino();
-            }
-            document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
-        }
-        if(e.which === 'O'.charCodeAt()) {
-            while(tetrominoNext.name!='O'){
-                tetrominoNext = getNextTetromino();
-            }
-            document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
-        }
-        if(e.which === 'S'.charCodeAt()) {
-            while(tetrominoNext.name!='S'){
-                tetrominoNext = getNextTetromino();
-            }
-            document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
-        }
-        if(e.which === 'T'.charCodeAt()) {
-            while(tetrominoNext.name!='T'){
-                tetrominoNext = getNextTetromino();
-            }
-            document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
-        }
-        if(e.which === 'Z'.charCodeAt()) {
-            while(tetrominoNext.name!='Z'){
-                tetrominoNext = getNextTetromino();
-            }
-            document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
-        }
-    
-        if((e.which === 27)||(e.which === 13)) {
-            isPaused=!isPaused;
-            //alert('"Pause". Press "Ok" for continue.');
-        }
+        //if(e.which === 'I'.charCodeAt()) {
+        //    while(tetrominoNext.name!='I'){
+        //        tetrominoNext = getNextTetromino();
+        //    }
+        //    document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
+        //}
+        //if(e.which === 'J'.charCodeAt()) {
+        //    while(tetrominoNext.name!='J'){
+        //        tetrominoNext = getNextTetromino();
+        //    }
+        //    document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
+        //}
+        //if(e.which === 'L'.charCodeAt()) {
+        //    while(tetrominoNext.name!='L'){
+        //        tetrominoNext = getNextTetromino();
+        //    }
+        //    document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
+        //}
+        //if(e.which === 'O'.charCodeAt()) {
+        //    while(tetrominoNext.name!='O'){
+        //        tetrominoNext = getNextTetromino();
+        //    }
+        //    document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
+        //}
+        //if(e.which === 'S'.charCodeAt()) {
+        //    while(tetrominoNext.name!='S'){
+        //        tetrominoNext = getNextTetromino();
+        //    }
+        //    document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
+        //}
+        //if(e.which === 'T'.charCodeAt()) {
+        //    while(tetrominoNext.name!='T'){
+        //        tetrominoNext = getNextTetromino();
+        //    }
+        //    document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
+        //}
+        //if(e.which === 'Z'.charCodeAt()) {
+        //    while(tetrominoNext.name!='Z'){
+        //        tetrominoNext = getNextTetromino();
+        //    }
+        //    document.getElementById('nextFigureDIV').innerHTML='NextFigure: '+tetrominoNext.name;
+        //}
+
+        //if((e.which === 27)||(e.which === 13)) {
+        //    isPaused=!isPaused;
+        //    //alert('"Pause". Press "Ok" for continue.');
+        //}
     });
 
     function downOne()
@@ -399,6 +408,7 @@
     // Start the game loop again
     rAF = requestAnimationFrame(loop);
     }
+    <p> PRESS SAPCE TO RESTART </p>
     document.getElementById('restartButton').addEventListener('click', restartGame);
 
     // start the game
@@ -420,7 +430,7 @@
         justify-content: center;
     }
     #game {
-        background-image: url("https://e1.pxfuel.com/desktop-wallpaper/26/416/desktop-wallpaper-50-beautiful-nature-phone-backgrounds-for-great-nature.jpg");
+        background-image: url("../img/BackGroundT.jpg");
         background-size: cover;
         background-repeat: no-repeat; 
     }

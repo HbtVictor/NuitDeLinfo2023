@@ -41,7 +41,7 @@
    }
    
    /*Buttons*/
-   .btn {
+   .btn-connect {
     margin: 1rem;
     border: none;
     border-radius: 4px;
@@ -68,7 +68,7 @@
     transition: opacity .3s;
    }
    
-   .btn:hover {
+   .btn-connect:hover {
     background-color: #5e6681;
     color: #ffeba7;
     box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
