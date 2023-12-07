@@ -6,9 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AccueilController extends AbstractController
+class FirstController extends AbstractController
 {
-    #[Route('/accueil', name: 'app_first')]
+    #[Route('/blog/accueil', name: 'app_first')]
     public function index(): Response
     {
         return $this->render('first/index.html.twig', [
