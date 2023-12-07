@@ -32,8 +32,17 @@ class RegistrationType extends AbstractType
 
 
             ])
-            ->add('password')
-            ->add('email', TextType::class, [
+            ->add('password', RepeatedType::class, [
+                'type' => PasswordType::class,
+                'first_options' => [
+                    'label' => 'Mot de passe',
+                ],
+                'second_options' => [
+                    'label' => "Confirmation du mot de passe"
+                ],
+                'invalid_message' => 'Les mots de passe ne conviennent pas'
+            ])
+            ->add('email', EmailType::class, [
                 'attr' => [
                     'class' => 'form-control',
                     'minlenght' => '2',
@@ -48,9 +57,14 @@ class RegistrationType extends AbstractType
                     new Assert\Email(),
                     new Assert\Length(['min' => 2, 'max' => 180])
                 ]
+
             ])
 
-            ->add('submit', SubmitType::class);
+            ->add('submit', SubmitType::class, [
+                'attr' => [
+                    'class' => 'btn btn-primary'
+                ]
+            ]);
         ;
     }
 
