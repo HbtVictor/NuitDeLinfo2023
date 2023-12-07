@@ -1,0 +1,20 @@
+p{
+    color: black;
+}
+
+i{
+    color: black;
+}
+
+span{
+    color: black;
+}
+
+.font-weight-bold{
+    font-size: 50px;
+    text-align: left;
+}
+
+.text-muted{
+    text-align: left;
+}
