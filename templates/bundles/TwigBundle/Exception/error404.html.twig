@@ -421,30 +421,3 @@
     rAF = requestAnimationFrame(loop);
 </script>
 {% endblock %}
-
-{% block stylesheets %}
-<style>
-    #tetris {
-        border-radius: 10px;
-        overflow: hidden;
-
-        border-collapse: collapse; 
-        border: 1px solid black; 
-        width: 320px; 
-        height: 640px; 
-        align-items: center; 
-        justify-content: center;
-    }
-    #game {
-        background-image: url("../images/BackGroundT.jpg");
-        background-size: cover;
-        background-repeat: no-repeat; 
-    }
-    body {
-        # background-image: url('../images/nature-background.webp');
-        # background-size: auto, auto;
-        # background-repeat: no-repeat;
-        # background-position: center;
-    }
-</style>
-{% endblock %}
