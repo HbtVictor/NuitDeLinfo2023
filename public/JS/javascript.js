@@ -7,7 +7,7 @@ function toggleDarkMode() {
         element.className = "dark-mode";
         navbar.classList.remove("bg-primary-light");
         navbar.classList.add("bg-primary-dark");
-        navbar.setAttribute("data-bs-theme", "light");
+        navbar.setAttribute("data-bs-theme", "dark");
     } else {
         element.className = "light-mode";
         navbar.classList.remove("bg-primary-dark");
