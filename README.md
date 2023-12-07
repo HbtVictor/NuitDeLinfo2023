@@ -11,5 +11,7 @@ Si la réponse est "composer file does not exist"
 faire :
 
 >> php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
 >> php composer-setup.php --filename=composer
+
 >> php composer update
