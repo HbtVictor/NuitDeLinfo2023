@@ -11,7 +11,7 @@
             <canvas width='320' height='640' id='game'></canvas>
         </div>
         <div id='nextFigureDIV'>NextFigure: X</div>
-        <hr>PRESS SAPCE TO START / RESTART
+        <hr><div class="pb-3">PRESS SPACE TO START / RESTART</div>
     </center>
 {% endblock %}
 
@@ -323,6 +323,8 @@
             isPaused = false;
             restartGame();
         }
+
+        
     
         
         // enter key (fast drop)
