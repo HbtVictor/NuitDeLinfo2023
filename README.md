@@ -2,7 +2,8 @@
 
 -- Pour Vendor !! 
 Avoir PHP 8.2.0 (voir variables d'environnement)
-executer la commande :
+Dans le fichier du projet "C:\wamp64(ou xampp)\www\NuitDeLinfo2023" executer la commande : 
+
 >> php composer update
 
 Si la réponse est "composer file does not exist"
