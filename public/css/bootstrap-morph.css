@@ -136,6 +136,8 @@
 
 [data-bs-theme=dark] {
   color-scheme: dark;
+  --bs-primary-rgb: 37, 114, 81;
+  --bs-primary-dark-rgb: 32, 32, 32;
   --bs-body-color: #dee2e6;
   --bs-body-color-rgb: 222, 226, 230;
   --bs-body-bg: #212529;
@@ -3092,7 +3094,7 @@ textarea.form-control-lg {
 
 .btn-primary {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #378dfc;
+  --bs-btn-bg: #ffffff;
   --bs-btn-border-color: #378dfc;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #2f78d6;
