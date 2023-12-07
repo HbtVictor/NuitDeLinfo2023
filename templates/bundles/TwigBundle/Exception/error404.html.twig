@@ -10,7 +10,7 @@
             <canvas width='320' height='640' id='game'></canvas>
         </div>
         <div id='nextFigureDIV'>NextFigure: X</div>
-        <hr><div id='restartButton'><button id='restartButton'>Restart Game</button></div>
+        <hr>PRESS SAPCE TO START / RESTART
     </center>
 {% endblock %}
 
@@ -408,8 +408,12 @@
     // Start the game loop again
     rAF = requestAnimationFrame(loop);
     }
-    <p> PRESS SAPCE TO RESTART </p>
-    document.getElementById('restartButton').addEventListener('click', restartGame);
+    
+    document.addEventListener('keydown', function(event) {
+        if (event.key === ' ') {
+            restartGame();
+        }
+     });
 
     // start the game
     rAF = requestAnimationFrame(loop);
@@ -430,12 +434,12 @@
         justify-content: center;
     }
     #game {
-        background-image: url("../img/BackGroundT.jpg");
+        background-image: url("../images/BackGroundT.jpg");
         background-size: cover;
         background-repeat: no-repeat; 
     }
     body {
-        # background-image: url('../img/nature-background.webp');
+        # background-image: url('../images/nature-background.webp');
         # background-size: auto, auto;
         # background-repeat: no-repeat;
         # background-position: center;
