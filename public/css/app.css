@@ -1,21 +1,22 @@
-.card {
-    width: 190px;
-    padding: 1.9rem 1.2rem;
-    text-align: center;
-    background: #2a2b38;
-   }
+/* LOGIN FORM */
+    .card-perso {
+        width: 190px;
+        padding: 1.9rem 1.2rem;
+        text-align: center;
+        background: #2a2b38;
+    }
    
    /*Inputs*/
-   .field {
-    margin-top: .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5em;
-    background-color: #1f2029;
-    border-radius: 4px;
-    padding: .5em 1em;
-   }
+    .field {
+        margin-top: .5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5em;
+        background-color: #1f2029;
+        border-radius: 4px;
+        padding: .5em 1em;
+    }
    
    .input-icon {
     height: 1em;
@@ -76,4 +77,5 @@
    .btn-link:hover {
     color: #ffeba7;
    }
+/* LOGIN FORM END */
    
