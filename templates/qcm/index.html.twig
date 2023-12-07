@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello QcmController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <form action="/" method="post">
+        <h2>question</h2>
+        <label for="q1rep1">q1rep1txt</label>
+        <input type="checkbox" name="q1rep1"> 
+        <label for="q1rep2">q1rep2txt</label>
+        <input type="checkbox" name="q1rep2"> 
+        <label for="q1rep3">q1rep3txt</label>
+        <input type="checkbox" name="q1rep3"> 
+        <label for="q1rep4">q1rep4txt</label>
+        <input type="checkbox" name="q1rep4"> 
+    </form>
+
+
+</div>
+{% endblock %}
