@@ -393,7 +393,9 @@
     {
     cancelAnimationFrame(rAF);  // Cancel the current animation frame
     gameOver = false;            // Set the game over flag to false
-
+    
+    score = 0;
+    document.getElementById('score').innerHTML='Score: '+score;
     // Reset the playfield
     for (let row = -2; row < playfield.length; row++) {
         for (let col = 0; col < playfield[row].length; col++) {
