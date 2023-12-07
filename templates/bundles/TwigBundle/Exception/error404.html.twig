@@ -20,6 +20,13 @@
     let score=0;
     let isPaused=true;
 
+    window.addEventListener("keydown", function(e) {
+        // space and arrow keys
+        if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+        }
+        }, false);
+
     // get a random integer between the range of [min,max]
     function getRandomInt(min, max) {
         min = Math.ceil(min);
