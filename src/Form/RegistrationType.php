@@ -6,9 +6,13 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class RegistrationType extends AbstractType
 {
@@ -35,10 +39,22 @@ class RegistrationType extends AbstractType
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'first_options' => [
+                    'attr' => [
+                        'class' => 'form-control'
+                    ],
                     'label' => 'Mot de passe',
+                    'label_attr' => [
+                        'class' => 'form-control'
+                    ]
                 ],
                 'second_options' => [
-                    'label' => "Confirmation du mot de passe"
+                    'attr' => [
+                        'class' => 'form-control'
+                    ],
+                    'label' => 'Confirmation du mot de passe',
+                    'label_attr' => [
+                        'class' => 'form-control'
+                    ]
                 ],
                 'invalid_message' => 'Les mots de passe ne conviennent pas'
             ])
