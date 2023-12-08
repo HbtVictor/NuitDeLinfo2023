@@ -84,6 +84,9 @@
 
 
 /* ACCUEIL */
+footer{
+    margin-top:100px;
+}
 p{
     color: black;
 }
@@ -107,7 +110,7 @@ span{
 }
 
 #image1{
-    width: 25rem; /* ajustez la largeur comme nécessaire */
+    width: 25rem; 
     height: auto;
 }
 
