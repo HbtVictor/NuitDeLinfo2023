@@ -17,12 +17,14 @@ class UserController extends AbstractController
             return $this->redirectToRoute('security.login');
         }
 
-        if($this->getUser() === $user){
-            return $this->redirectToRoute('accueuil');
+        if($this->getUser() !== $user){
+            return $this->redirectToRoute('accueil');
         }
 
+        $form = $this->createForm(UserType::class, $user);
+
         return $this->render('user/edit.html.twig', [
-            'controller_name' => 'UserController',
+            'form' => $form,
         ]);
     }
 }
