@@ -21,7 +21,7 @@ class RegistrationType extends AbstractType
         $builder
             ->add('pseudo', TextType::class, [
                 'attr' => [
-                    'class' => 'form-control',
+                    'class' => 'input-field',
                     'minlength' => '2',
                     'maxlength' => '50',
                 ],
@@ -53,31 +53,18 @@ class RegistrationType extends AbstractType
                 ]
 
             ])
-            ->add('password', RepeatedType::class, [
-                'type' => PasswordType::class,
-                'first_options' => [
+            ->add('password', PasswordType::class, [
                     'attr' => [
-                        'class' => 'form-control'
+                        'class' => 'input-field'
                     ],
                     'label' => 'Mot de passe',
                     'label_attr' => [
                         'class' => 'form-label mt-4'
                     ]
-                ],
-                'second_options' => [
-                    'attr' => [
-                        'class' => 'form-control'
-                    ],
-                    'label' => 'Confirmation du mot de passe',
-                    'label_attr' => [
-                        'class' => 'form-label mt-4'
-                    ]
-                ],
-                'invalid_message' => 'Les mots de passe ne conviennent pas'
             ])
-            ->add('submit', SubmitType::class, [
+            ->add('Inscription', SubmitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary'
+                    'class' => 'btn-connect'
                 ]
             ]);
         ;

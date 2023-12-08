@@ -14,7 +14,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     #[Route('/connexion', name: 'security.login', methods: ['GET', 'POST'])]
-    public function index(AuthenticationUtils $authenticationUtils): Response
+    public function index(AuthenticationUtils $authenticationUtils, Request $request): Response
     {
 
         return $this->render('security/login.html.twig', [
@@ -41,13 +41,13 @@ class SecurityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) { 
             $user = $form->getData();
 
+            $manager->persist($user);
+            $manager->flush();
+
             $this->addFlash(
                 'success',
                 'Votre compte à bien été crée.'
             );
-
-            $manager->persist($user);
-            $manager->flush();
             
             return $this->redirectToRoute('security.login');
         }

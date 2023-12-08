@@ -4,6 +4,13 @@
 
 {% block body %}
 
+        {% for message in app.flashes('success') %}
+			<div class="alert alert-success mt-4">
+				{{ message }}
+			</div>
+		{% endfor %}
+
+
         {% if error %}
 			<div class="alert alert-danger mt-4">
 				{{ error.messageKey|trans(error.messageData, 'security') }}
