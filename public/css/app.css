@@ -165,7 +165,7 @@ h3{
     .hover_img { 
         position:relative;  
     }
-    .hover_img a span { 
+    .hover_img span { 
         position:absolute; 
         display:none; 
         z-index:99;

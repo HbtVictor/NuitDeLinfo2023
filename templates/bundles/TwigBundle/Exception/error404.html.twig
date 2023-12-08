@@ -5,12 +5,12 @@
 
 {% block body %}
     <link rel="stylesheet" href="{{ asset('css/tetris.css') }}">
+    <div class="hover_img">
+        <span>
+            <img id="resultImage" src="{{ asset('images/gta.jpeg') }}" alt="Résultat de la séquence" width="700px" height="700px">
+        </span>
+    </div>
     <center>
-        <div class="hover_img">
-            <span>
-                <img id="resultImage" src="{{ asset('images/gta.jpeg') }}" alt="Résultat de la séquence">
-            </span>
-        </div>
         <div id='score'>Score: 0</div>
         <div id='tetris'>
             <canvas width='320' height='640' id='game'></canvas>
