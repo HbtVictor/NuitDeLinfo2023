@@ -4,23 +4,137 @@
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .container {
+        --s: 1em; /* control the size */
+        --g: 10px; /* the gap */
+        --c: #009688; /* the active color */
+      
+        display: grid;
+        grid-auto-rows: 1fr;
+        gap: var(--g);
+        position: relative;
+      }
+      .container:before {
+        content: "";
+        position: absolute;
+        height: calc(var(--s) / 2);
+        left: calc(var(--s) + var(--_x, 0px));
+        top: calc(var(--s) / 4);
+        background: var(--c);
+        border-radius: 50%;
+        aspect-ratio: 1;
+        transition: 0.4s, left cubic-bezier(0.1, -2000, 0.7, -2000) 0.4s;
+      }
+      .container label {
+        display: inline-flex;
+        line-height: var(--s);
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+      .container input {
+        height: var(--s);
+        aspect-ratio: 1;
+        border: calc(var(--s) / 8) solid var(--_c, #939393);
+        border-radius: 50%;
+        outline-offset: calc(var(--s) / 10);
+        padding: calc(var(--s) / 8);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        font-size: inherit;
+        margin: 0;
+        transition: 0.3s;
+      }
+      .container input:checked {
+        --_c: var(--c);
+      }
+      .container:not(:has(input:checked)):before {
+        --_i: -1;
+        opacity: 0;
+      }
+      .container:has(input:checked):before {
+        opacity: 1;
+        transform: translateY(calc(var(--_i) * (var(--s) + var(--g))));
+      }
+      .container:has(label:nth-child(1) input:checked):before {
+        --_i: 0;
+        --_x: 0.02px;
+      }
+      .container:has(label:nth-child(2) input:checked):before {
+        --_i: 1;
+        --_x: 0.04px;
+      }
+      .container:has(label:nth-child(3) input:checked):before {
+        --_i: 2;
+        --_x: 0.06px;
+      }
+      .container:has(label:nth-child(4) input:checked):before {
+        --_i: 3;
+        --_x: 0.08px;
+      }
+      .container:has(label:nth-child(5) input:checked):before {
+        --_i: 4;
+        --_x: 0.1px;
+      }
+      /* and so on ..*/
+      
+      .container input:disabled {
+        background: linear-gradient(#939393 0 0) 50%/100% 20% no-repeat content-box;
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+      @media print {
+        input[type="radio"] {
+          -webkit-appearance: auto;
+          -moz-appearance: auto;
+          appearance: auto;
+          background: none;
+        }
+      }
+      @supports not selector(:has(*)) {
+        .container:before {
+          display: none;
+        }
+        .container input:checked {
+          --_c: var(--c);
+          background: var(--c) content-box;
+        }
+      }
+      
 </style>
 
 <div class="example-wrapper">
     <form action="/" method="post">
-        <h2>question</h2>
-        <label for="q1rep1">q1rep1txt</label>
-        <input type="checkbox" name="q1rep1"> 
-        <label for="q1rep2">q1rep2txt</label>
-        <input type="checkbox" name="q1rep2"> 
-        <label for="q1rep3">q1rep3txt</label>
-        <input type="checkbox" name="q1rep3"> 
-        <label for="q1rep4">q1rep4txt</label>
-        <input type="checkbox" name="q1rep4"> 
+        <h2>Lequel de ces gaz à effet de serre est le plus puissant ?</h2>
+        <div class="container">
+            <label><input name="ed" type="radio" /> A. Le dioxyde de carbone (CO2)</label>
+            <label><input name="ed" type="radio" /> B. Le méthane (CH4)</label>
+            <label><input name="ed" type="radio" /> C. L'oxyde nitreux (N2O) </label>
+            <label><input name="ed" type="radio" /> D. L'hexafluorure de soufre (SF6) </label>
+        </div>
+        <h2>Quel est l'impact du réchauffement climatique sur les écosystèmes marins ?</h2>
+        <div class="container">
+            <label><input name="ez" type="radio" /> A. L'acidification des océans</label>
+            <label><input name="ez" type="radio" /> B. L'élévation du niveau de la mer </label>
+            <label><input name="ez" type="radio" /> C. Les changements dans les régimes de précipitations </label>
+            <label><input name="ez" type="radio" /> D. Tout ce qui précède </label>
+        </div>
+        <h2>Quelle est la principale cause de la déforestation ?</h2>
+        <div class="container">
+            <label><input name="e" type="radio" />A. L'agriculture</label>
+            <label><input name="e" type="radio" />B. L'exploitation forestière</label>
+            <label><input name="e" type="radio" />C. L'urbanisation </label>
+            <label><input name="e" type="radio" />D. Les incendies de forêt  </label>
+        </div>
+        <h2>Quel est le principal gaz à effet de serre émis par les activités humaines ?</h2>
+        <div class="container">
+            <label><input name="ed" type="radio" /> A. Le dioxyde de carbone (CO2)</label>
+            <label><input name="ed" type="radio" /> B. Le méthane (CH4)</label>
+            <label><input name="ed" type="radio" /> C. L'oxyde nitreux (N2O) </label>
+            <label><input name="ed" type="radio" /> D. L'hexafluorure de soufre (SF6) </label>
+        </div>
     </form>
-
-
 </div>
 {% endblock %}
