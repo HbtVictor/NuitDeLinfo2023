@@ -13,7 +13,7 @@ class UserController extends AbstractController
 
 
 
-    #[Route('/utilisateur', name: 'userProfile')]
+    #[Route('/utilisateur', name: 'user.profile')]
     public function userInterface(User $user): Response
     {
 
