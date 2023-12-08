@@ -35,7 +35,7 @@ class UserController extends AbstractController
 
 
     #[Route('/utilisateur/edit/{id}', name: 'user.edit')]
-    public function index(User $user): Response
+    public function userEdit(User $user): Response
     {
 
         if(!$this->getUser()){
