@@ -8,14 +8,16 @@ function toggleDarkMode() {
     if (darkModeCheckbox.checked) {
        element.className = "dark-mode";
        element1.className = "h3-dark";
-       element2.classList.replace("text-muted-light", "text-muted-dark");
+       element2.classList.remove("text-muted-light");
+       element2.classList.remove("text-muted-dark");
        navbar.classList.remove("bg-primary-light");
        navbar.classList.add("bg-primary-dark");
        navbar.setAttribute("data-bs-theme", "dark");
     } else {
        element.className = "light-mode";
        element1.className = "h3-light";
-       element2.classList.replace("text-muted-dark", "text-muted-light");
+       element2.classList.remove("text-muted-dark");
+       element2.classList.remove("text-muted-light");
        navbar.classList.remove("bg-primary-dark");
        navbar.classList.add("bg-primary-light");
        navbar.setAttribute("data-bs-theme", "dark");
