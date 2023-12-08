@@ -13,7 +13,7 @@ class UserController extends AbstractController
 
 
 
-    #[Route('/utilisateur', name: 'user')]
+    #[Route('/utilisateur', name: 'user.profile')]
     public function userInterface(User $user): Response
     {
 
@@ -21,21 +21,21 @@ class UserController extends AbstractController
             return $this->redirectToRoute('security.login');
         }
 
-        if($this->getUser() !== $user){
-            return $this->redirectToRoute('accueil');
-        }
+        // if($this->getUser() !== $user){
+        //     return $this->redirectToRoute('accueil');
+        // }
 
         return $this->render('user/user.html.twig',[
-            'userName' => $user->getPseudo(),
-            'userEmail' => $user->getEmail(),
-            'userPassword' => $user->getPassword()
+            'userName' => $this->getUser()->getPseudo(),
+            'userEmail' => $this->getUser()->getEmail(),
+            'userPassword' => $this->getUser()->getPassword()
         ]);
     }
 
 
 
     #[Route('/utilisateur/edit/{id}', name: 'user.edit')]
-    public function index(User $user): Response
+    public function userEdit(User $user): Response
     {
 
         if(!$this->getUser()){

@@ -8652,12 +8652,39 @@ textarea.form-control-lg {
 
 .text-muted-light {
   --bs-text-opacity: 1;
-  color: #000 !important;
+  color: black !important;
 }
 
 .text-muted-dark {
   --bs-text-opacity: 1;
-  color: #fff !important;
+  color: white !important;
+}
+
+
+div.grid2-p-light {
+  color: white !important;
+}
+
+div.grid2-p-dark {
+  color: dark !important;
+}
+
+h3.h3-light{
+  color: black !important;
+}
+
+h3.h3-dark{
+  color: white !important;
+}
+
+p.text-muted-light {
+  --bs-text-opacity: 1;
+  color: var(--bs-text-color-scheme-light);
+}
+
+p.text-muted-dark {
+  --bs-text-opacity: 1;
+  color: var(--bs-text-color-scheme-dark);
 }
 
 .text-black-50 {
