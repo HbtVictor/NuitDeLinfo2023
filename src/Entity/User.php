@@ -30,7 +30,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?\DateTimeImmutable $createdAt = null;
 
     public function __construct(){  
-        $this->createAt = new \DateTimeImmutable();
+        $this->createdAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int

@@ -27,13 +27,30 @@ class RegistrationType extends AbstractType
                 ],
                 'label' => 'Nom / Prénom',
                 'label_attr' => [
-                    'class' => 'form_label'
+                    'class' => 'form-label mt-4'
                 ],
                 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Length(['min' => 2, 'max' => 50])
                 ]
 
+
+            ])
+            ->add('email', EmailType::class, [
+                'attr' => [
+                    'class' => 'form-control',
+                    'minlenght' => '2',
+                    'maxlenght' => '180',
+                ],
+                'label' => 'Adresse email',
+                'label_attr' => [
+                    'class' => 'form-label mt-4'
+                ],
+                'constraints' => [
+                    new Assert\NotBlank(),
+                    new Assert\Email(),
+                    new Assert\Length(['min' => 2, 'max' => 180])
+                ]
 
             ])
             ->add('password', RepeatedType::class, [
@@ -44,7 +61,7 @@ class RegistrationType extends AbstractType
                     ],
                     'label' => 'Mot de passe',
                     'label_attr' => [
-                        'class' => 'form-control'
+                        'class' => 'form-label mt-4'
                     ]
                 ],
                 'second_options' => [
@@ -53,29 +70,11 @@ class RegistrationType extends AbstractType
                     ],
                     'label' => 'Confirmation du mot de passe',
                     'label_attr' => [
-                        'class' => 'form-control'
+                        'class' => 'form-label mt-4'
                     ]
                 ],
                 'invalid_message' => 'Les mots de passe ne conviennent pas'
             ])
-            ->add('email', EmailType::class, [
-                'attr' => [
-                    'class' => 'form-control',
-                    'minlenght' => '2',
-                    'maxlenght' => '180',
-                ],
-                'label' => 'Adresse email',
-                'label_attr' => [
-                    'class' => 'form-label  mt-4'
-                ],
-                'constraints' => [
-                    new Assert\NotBlank(),
-                    new Assert\Email(),
-                    new Assert\Length(['min' => 2, 'max' => 180])
-                ]
-
-            ])
-
             ->add('submit', SubmitType::class, [
                 'attr' => [
                     'class' => 'btn btn-primary'
