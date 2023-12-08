@@ -14,16 +14,14 @@ class UserController extends AbstractController
 
 
     #[Route('/utilisateur', name: 'user')]
-    public function userInterface(User $user): Response
+    public function userInterface(): Response
     {
+        $user = $this->getUser();
 
-        if(!$this->getUser()){
+        if(!$user){
             return $this->redirectToRoute('security.login');
         }
 
-        if($this->getUser() !== $user){
-            return $this->redirectToRoute('accueil');
-        }
 
         return $this->render('user/user.html.twig',[
             'userName' => $user->getPseudo(),
@@ -35,15 +33,12 @@ class UserController extends AbstractController
 
 
     #[Route('/utilisateur/edit/{id}', name: 'user.edit')]
-    public function index(User $user): Response
+    public function index(): Response
     {
+        $user = $this->getUser();
 
-        if(!$this->getUser()){
+        if(!$user){
             return $this->redirectToRoute('security.login');
-        }
-
-        if($this->getUser() !== $user){
-            return $this->redirectToRoute('accueil');
         }
 
         $form = $this->createForm(UserType::class, $user);
