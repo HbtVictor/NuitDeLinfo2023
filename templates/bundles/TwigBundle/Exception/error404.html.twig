@@ -7,9 +7,30 @@
     <link rel="stylesheet" href="{{ asset('css/tetris.css') }}">
     <div class="hover_img">
         <span>
-            <img id="resultImage" src="{{ asset('images/gta.jpeg') }}" alt="Résultat de la séquence" width="700px" height="700px">
+            <img id="resultImage" src="{{ asset('images/gta.jpeg') }}" alt="Image GTA JetPäck" width="700px" height="700px">
         </span>
     </div>
+    <section class="page_404">
+        <div class="container">
+            <div class="row">	
+            <div class="col-sm-12 ">
+            <div class="col-sm-10 col-sm-offset-1  text-center mx-auto">
+            <div class="four_zero_four_bg" alt="Gif d'une perte de connexion internet" z-index="2">
+            <h1 class="text-center " z-index="1">404</h1>
+            </div>
+            
+            <div class="contant_box_404">
+            <h3 class="h2 text-center">On dirait que vous êtes perdue ?!</h3>
+            
+            <p>La page que vous recherchez n'est pas disponible...</p>
+            
+            <a href="/" class="link_404">Retour à l'accueil</a>
+        </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
     <center>
         <div id='score'>Score: 0</div>
         <div id='tetris'>
@@ -450,15 +471,14 @@
     }
 
     document.addEventListener('keydown', function(event) {
-        const key = event.key;
-        keysPressed.push(key);
-        checkSequence();
-    });
-
-    document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             keysPressed = [];
             document.getElementById('resultImage').style.display = 'none';
+        }
+        else{
+        const key = event.key;
+        keysPressed.push(key);
+        checkSequence();
         }
     });
     console.log("Haut Bas Gauche Droite");
