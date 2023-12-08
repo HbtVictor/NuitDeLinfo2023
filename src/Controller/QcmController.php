@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class AccueilController extends AbstractController
+class QcmController extends AbstractController
 {
-    #[Route('/', name: 'accueil')]
+    #[Route('/qcm', name: 'app_qcm')]
     public function index(): Response
     {
-        return $this->render('first/index.html.twig', [
-            'controller_name' => 'FirstController',
+        return $this->render('qcm/index.html.twig', [
+            'controller_name' => 'QcmController',
         ]);
     }
 }

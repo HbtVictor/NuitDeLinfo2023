@@ -113,6 +113,7 @@ span{
     grid-template-columns: repeat(2,1fr);
     row-gap: 20px;
     margin-left: 100px;
+    margin-bottom: 100px;
 
 
 }
@@ -134,8 +135,27 @@ h3{
 
 .btn-inscription{
     text-align: left;
-    color: #fff;
+    border-radius: 10px;
+
+}
+
+.btn-inscription button{
     border-radius: 5px;
+    border-style: none;
+    background-color: #257251;
+
+}
+
+.btn-inscription p{
+    color: #fff;
+    margin: 2px 20px;
+    
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-right: 100px;
 }
 /* END ACCUEIL */
    
