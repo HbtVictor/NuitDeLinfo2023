@@ -15,4 +15,12 @@ class QcmController extends AbstractController
             'controller_name' => 'QcmController',
         ]);
     }
+
+    #[Route('/qcm/rep', name: 'app_rep')]
+    public function index2(): Response
+    {
+        return $this->render('qcm/rep.html.twig', [
+            'controller_name' => 'QcmController',
+        ]);
+    }
 }
