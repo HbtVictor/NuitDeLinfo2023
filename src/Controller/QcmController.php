@@ -16,7 +16,7 @@ class QcmController extends AbstractController
         ]);
     }
 
-    #[Route('/qcm/rep', name: 'app_rep')]
+    #[Route('/qcm/rep', name: 'rep')]
     public function index2(): Response
     {
         return $this->render('qcm/rep.html.twig', [
