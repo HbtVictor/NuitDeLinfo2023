@@ -20,7 +20,7 @@ security:
             form_login: 
                 login_path: security.login
                 check_path: security.login
-                default_target_path: accueil
+                default_target_path: /
             logout:
                 path: security.logout
 
