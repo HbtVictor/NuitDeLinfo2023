@@ -176,5 +176,8 @@ h3{
     .hover_img span { 
         display:block;
     }
+    #searchBar{
+    margin-left: 10px;
+    }
 /* END ACCUEIL */
    

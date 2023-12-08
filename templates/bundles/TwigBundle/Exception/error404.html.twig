@@ -450,15 +450,14 @@
     }
 
     document.addEventListener('keydown', function(event) {
-        const key = event.key;
-        keysPressed.push(key);
-        checkSequence();
-    });
-
-    document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             keysPressed = [];
             document.getElementById('resultImage').style.display = 'none';
+        }
+        else{
+        const key = event.key;
+        keysPressed.push(key);
+        checkSequence();
         }
     });
     console.log("Haut Bas Gauche Droite");
