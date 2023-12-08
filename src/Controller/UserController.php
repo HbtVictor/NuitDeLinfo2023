@@ -2,16 +2,26 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\User;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
-    #[Route('/user', name: 'app_user')]
-    public function index(): Response
+    #[Route('/utilisateur/edit/{id}', name: 'user.edit')]
+    public function index(User $user): Response
     {
-        return $this->render('user/index.html.twig', [
+
+        if(!$this->getUser()){
+            return $this->redirectToRoute('security.login');
+        }
+
+        if($this->getUser() === $user){
+            return $this->redirectToRoute('accueuil');
+        }
+
+        return $this->render('user/edit.html.twig', [
             'controller_name' => 'UserController',
         ]);
     }
