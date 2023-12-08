@@ -13,4 +13,38 @@
     background-image: url("../images/BackGroundT.jpg");
     background-size: cover;
     background-repeat: no-repeat; 
+    #tetris {
+        border-radius: 10px;
+        overflow: hidden;
+
+        border-collapse: collapse; 
+        border: 1px solid black; 
+        width: 320px; 
+        height: 640px; 
+        align-items: center; 
+        justify-content: center;
+    }
+    #game {
+        background-image: url("../images/BackGroundT.jpg");
+        background-size: cover;
+        background-repeat: no-repeat; 
+    }
+    #resultImage {
+        display: none;
+    }
+    .hover_img { 
+        position:relative;  
+    }
+    .hover_img a span { 
+        position:absolute; 
+        display:none; 
+        z-index:99;
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    .hover_img span { 
+        display:block;
+    }
 }
