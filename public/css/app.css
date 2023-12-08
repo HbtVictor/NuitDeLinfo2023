@@ -180,5 +180,45 @@ h3{
     #searchBar{
     margin-left: 10px;
     }
+
+    .carrousel{
+        margin-top: 100px;
+    }
+    
+    .grid-carrousel{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    
+    .slide-carrousel{
+        margin: 50px 50px;
+        padding: 10px 15px;
+        background-image: url('/images/pexels-lumn-167684 (1).jpg'); 
+        background-size: cover; 
+        background-position: center;
+        border-radius: 5px;
+        color: #fff
+    
+    }
+    
+    
+    
+    .slide-carrousel p{
+        color: #fff;
+    }
+    
+    .btn-carrousel{
+        border-radius: 100px;
+        border-style: none;
+        margin-left: 10px;
+    }
+    
+    
+    .slide-carrousel h6{
+        border-bottom: 2px solid #fff;
+    }
+    
 /* END ACCUEIL */
+
+
    
