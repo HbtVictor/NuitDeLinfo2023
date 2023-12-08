@@ -157,5 +157,24 @@ h3{
     grid-template-columns: repeat(2,1fr);
     margin-right: 100px;
 }
+
+    #resultImage {
+        display: none;
+    }
+    .hover_img { 
+        position:relative;  
+    }
+    .hover_img a span { 
+        position:absolute; 
+        display:none; 
+        z-index:99;
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+    .hover_img span { 
+        display:block;
+    }
 /* END ACCUEIL */
    
