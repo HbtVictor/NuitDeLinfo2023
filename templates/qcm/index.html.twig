@@ -5,7 +5,7 @@
 {% block body %}
 <link rel="stylesheet" href="{{ asset('css/qcm.css') }}">
 <div class="example-wrapper">
-    <form action="{{ path('qcm.rep') }}" method="post">
+    <form action="qcm/rep" method="post">
         <h2 class="py-2">Lequel de ces gaz à effet de serre est le plus puissant ?</h2>
         <div class="container">
             <label><input name="ed" type="radio" value="1A"/> A. Le dioxyde de carbone (CO2)</label>
@@ -36,7 +36,7 @@
         </div>
 </div>
 <div class="text-center">
-        <button type="sumbit" class="btn btn-primary btn-lg">Réponse ?</button>
+        <button type="sumbit" class="btn btn-primary btn-lg">Réponse</button>
 </div>
     </form>
 
