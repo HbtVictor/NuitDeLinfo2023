@@ -1,30 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello QcmController!{% endblock %}
+{% block title %}Résultats du QCM{% endblock %}
 
 {% block body %}
-    <link rel="stylesheet" href="{{ asset('css/qcm.css') }}">
+
 <div class="example-wrapper">
-    <h2 class="py-2">Lequel de ces gaz à effet de serre est le plus puissant ?</h2>
-    <div class="container">
-        <p>D. L'hexafluorure de soufre (SF6)</p>
-        Le SF6 a un potentiel de réchauffement global (PRG) de 23 900, ce qui signifie qu'il est 23 900 fois plus puissant que le CO2 pour piéger la chaleur dans l'atmosphère.
-    </div>
-    <h2 class="py-2">Quel est l'impact du réchauffement climatique sur les écosystèmes marins ?</h2>
-    <div class="container">
-        <p>D. Tout ce qui précède</p>
-        Le réchauffement climatique a un impact sur les écosystèmes marins de plusieurs façons. L'acidification des océans est causée par l'absorption du CO2 par les océans. L'élévation du niveau de la mer est causée par la dilatation thermique de l'eau et la fonte des glaciers et des calottes glaciaires. Les changements dans les régimes de précipitations peuvent entraîner des sécheresses, des inondations et d'autres perturbations des écosystèmes marins.
-    </div>
-    <h2 class="py-2">Quelle est la principale cause de la déforestation ?</h2>
-    <div class="container">
-       <p>C. L'agriculture</p>
-       L'agriculture est la principale cause de la déforestation, car elle nécessite des terres pour cultiver des cultures et élever du bétail. L'exploitation forestière et l'urbanisation sont également des causes importantes de la déforestation.
-    </div>
-    <h2 class="py-2">Quel est le principal gaz à effet de serre émis par les activités humaines ?</h2>
-    <div class="container">
-        <p>A. Le dioxyde de carbone (CO2)</p>
-        Le CO2 est émis par la combustion de combustibles fossiles, comme le charbon, le pétrole et le gaz naturel. Il est également émis par la déforestation et d'autres activités qui perturbent le cycle du carbone.
-    </div>
+    <h2>Résultats du QCM</h2>
+
+    <p>Félicitations, vous avez répondu correctement à toutes les questions !</p>
+
+    <p>Voici les réponses correctes :</p>
+
+    <ul>
+        <li>Question 1 : D. L'hexafluorure de soufre (SF6)</li>
+        <li>Question 2 : D. Tout ce qui précède</li>
+        <li>Question 3 : C. L'agriculture</li>
+        <li>Question 4 : A. Le dioxyde de carbone (CO2)</li>
+    </ul>
 </div>
 
 {% endblock %}
